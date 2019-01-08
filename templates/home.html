@@ -3,12 +3,15 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<h3>Welcome to our one-of-a kind service.</h3>
+<h5>e-Cart is ranked third behimd Amazon and Flipkart !</h5>
 {% if user.is_authenticated %}
-Hi {{ user.username }}!
-<p><a href="{% url 'logout' %}">logout</a></p>
+
 {% else %}
-<p>You are not logged in</p>
-<a href="{% url 'login' %}">login</a> |
-<a href="{% url 'signup' %}">signup</a>
+<div>
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">login</a> |
+    <a href="{% url 'signup' %}">signup</a>
+</div>
 {% endif %}
 {% endblock %}
