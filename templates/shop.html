@@ -4,4 +4,11 @@
 
 {% block content %}
 <h3>You can now shop</h3>
+
+<ul>
+    {% for product in object_list %}
+    <li>{{ product.productName }}</li>
+
+    {% endfor %}
+</ul>
 {% endblock content %}
