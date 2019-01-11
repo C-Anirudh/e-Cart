@@ -10,16 +10,17 @@
 
 <body>
     <main>
-        <h1>e-Cart</h1>
-        <div>
+        <h1><a href="{% url 'home' %}">e-Cart</a></h1>
+        <div align="right">
             {% if user.is_authenticated %}
-            Hi {{ user.username }}!
-            <p><a href="{% url 'logout' %}">logout</a></p>
+            Hi <b>{{ user.username }}!</b>
+            <a href="{% url 'logout' %}">logout</a>
             {% endif %}
         </div>
         {% block content %}
         {% endblock %}
     </main>
+    <script src="{% static 'js/base.js' %}"></script>
 </body>
 
 </html>

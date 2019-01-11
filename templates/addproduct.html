@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add Product</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="ADD" />
+    <button type="button" id="cancelBtn">CANCEL</button>
+</form>
+<br>
+<p><a href="{% url 'inventory' %}">view inventory</a></p>
+{% endblock content %}

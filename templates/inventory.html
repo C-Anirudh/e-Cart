@@ -1,12 +1,33 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block title %}Inventory{% endblock %}
 
-<h1>Add Product</h1>
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="ADD" />
-</form>
+{% block content %}
+<h1>Inventory</h1>
+<hr>
+<p><a href="{% url 'addproduct' %}">+ product</a> | <a href="{% url 'addcategory' %}">+ category</a></p>
+<hr>
+<br><br>
+<table style="width:100%" border="1">
+    <caption>Products</caption>
+    <tr>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for p in products %}
+    <tr>
+        <td>{{ p.productCategory }}</td>
+        <td>{{ p.productName }}</td>
+        <td>{{ p.productBrand }}</td>
+        <td>Rs. {{ p.productPrice }}</td>
+        <td><a href="{% url 'editproduct' p.pk %}">edit</a></td>
+        <td><a href="{% url 'removeproduct' p.pk %}">remove</a></td>
+    </tr>
+    {% endfor %}
+</table>
 
 {% endblock content %}

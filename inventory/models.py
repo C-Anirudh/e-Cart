@@ -8,6 +8,9 @@ class Category(models.Model):
     def __str__(self):
         return self.categoryName
 
+    def get_absolute_url(self):
+        return reverse('inventory')
+
 
 class Product(models.Model):
     productCategory = models.ForeignKey(Category, on_delete=models.CASCADE)
@@ -16,4 +19,4 @@ class Product(models.Model):
     productBrand = models.CharField(max_length=100)
 
     def get_absolute_url(self):
-        return reverse('shop')
+        return reverse('inventory')
