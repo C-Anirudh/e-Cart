@@ -5,10 +5,25 @@
 {% block content %}
 <h3>You can now shop</h3>
 
-<ul>
-    {% for product in object_list %}
-    <li>{{ product.productName }}</li>
-
+<table style="width:100%" border="1">
+    <caption>Products</caption>
+    <tr>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for p in products %}
+    <tr>
+        <td>{{ p.productCategory }}</td>
+        <td>{{ p.productName }}</td>
+        <td>{{ p.productBrand }}</td>
+        <td>Rs. {{ p.productPrice }}</td>
+        <td><a href="">add</a></td>
+        <td><a href="">remove</a></td>
+    </tr>
     {% endfor %}
-</ul>
+</table>
 {% endblock content %}
