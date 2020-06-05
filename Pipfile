@@ -7,7 +7,7 @@ url = "https://pypi.org/simple"
 "autopep8" = "*"
 
 [packages]
-django = "==2.1.10"
+django = "==2.2.13"
 
 [requires]
 python_version = "3.5"
